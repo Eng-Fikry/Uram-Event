@@ -1,0 +1,150 @@
+body
+{
+    font-family: 'Noto Kufi Arabic';
+    background-image: url('../images/back.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    box-sizing: border-box;
+    position: relative;
+    direction: rtl;
+}
+
+body::before
+{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../images/back.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(8px);
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: -1;
+}
+
+.panel-heading
+{
+    font-size: 25px;
+    background-color: #7a4f94;
+    color: white;
+    text-align: center;
+    padding: 22px;
+    border-radius: 12px 12px 0 0;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.panel-heading2
+{
+    font-size: 22px;
+    background-color: #7a4f94;
+    color: white;
+    text-align: center;
+    padding: 8px;
+    border-radius: 12px 12px 0 0;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.panel-body
+{
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+p
+{
+    line-height: 1.6;
+    margin: 12px 0;
+    font-size: 16px;
+}
+ol
+{
+    margin: 20px 0;
+}
+ul
+{
+    margin-top: 10px;
+}
+li
+{
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+li>ul li
+{
+    font-size: 14px;
+}
+.txt
+{
+    background-color: #fff;
+    border-radius: 15px;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+a {
+    color: #7a4f94;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+a:hover {
+    color: #5e378a;
+}
+
+button
+{
+    background-color: #7a4f94;
+    color: white;
+    font-size: 18px;
+    padding: 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin: 20px;
+    width:30%;
+    transition: background-color 0.3s ease;
+    float: left;  /* يضع الزر على اليسار */
+}
+
+
+
+button:hover {
+    background-color: #6c3f7d;
+     width:30%;
+}
+
+.top {
+    text-align: center;
+}
+.top img {
+    max-width: 100%;
+    border-radius: 12px 12px 0 0; 
+    height: auto;
+
+        }
+       .panel-heading2 {
+    position: relative;
+    width: 100%;  /* لضمان أن العنصر يمتد عبر كامل عرض الصفحة */
+    text-align: center;  /* لضبط النص في منتصف السطر */
+  }
+
+.panel-heading2 i {
+    position: absolute;
+    right: 0;  /* وضع الأيقونة في بداية السطر */
+    top: 50%;  /* ضبط الأيقونة في منتصف السطر عموديًا */
+    transform: translateY(-50%);  /* لضبط الأيقونة بشكل دقيق في المنتصف عموديًا */
+    margin-right:20px;
+}
+.panel-heading2 span {
+  padding-left: 30px;  /* إضافة مسافة بين الأيقونة والنص */
+}
