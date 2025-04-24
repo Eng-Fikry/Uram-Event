@@ -1,246 +1,0 @@
-
-
-<!DOCTYPE html>
-<html lang="ar">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Application Form</title>
-
-    <meta charset="UTF-8">
-    <!-- <link rel="icon" href="images/logo1.jpg"> -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style2.css">
-</head>
-
-<body>
-  
-  <div id="loadingOverlay" class="overlay hidden">
-    <span class="loader"></span>
-  </div>
-  
-    <div class="body">
-        <a href="index.html"><button>السابق</button></a>
-        <form action="" method="POST" enctype="multipart/form-data">
-            <!-- personal -->
-            <div class="panel panel-default">
-                <div class="panel-heading" style="font-size:large;background-color: #9B7EBD; color:white"> Personal Information</div>
-                <div class="panel-body" style="background-color: #F1EFEF;">
-                    <label for="firstName" class="name">First Name : *</label><br>
-                    <input type="text" id="firstName" name="firstName" class="input" placeholder="Enter your first name" required><br>
-
-                    <label for="lastName" class="name">Last Name : *</label><br>
-                    <input type="text" id="lastName" name="lastName" class="input" placeholder="Enter your last name" required><br>
-
-                    
-                    <label for="email" class="name">Email : *</label><br>
-                    <input type="email" id="email" name="email" class="input" required placeholder="Enter your email"><br>
-
-                    <label for="phone" class="name">Phone : *</label><br>
-                    <div class="input-container">
-                        <div class="flag"></div>
-                        <div class="country-code">+20</div>
-                        <input type="tel" id="phone" name="phone" class="input" oninput="validatePhone()" maxlength="10">
-                        <span id="phoneError" style="color: red; display: none;">Phone number must be 10 digits</span>
-                        <span id="phoneError" style="display:none; color:red;">رقم الهاتف يجب أن يكون رقمًا مصريًا صحيحًا مكونًا من 11 رقمًا ويبدأ بـ 010 أو 011 أو 012 أو 015</span>
-
-                    </div>
-                    <label for="gender" class="name">Residence : *</label><br>
-                    <input type="radio" id="male" class="input1" name="residence" value="داخل ميت غمر" style="margin-right: 6px;"> داخل ميت غمر
-                    <input type="radio" id="female" class="input1" name="residence" value="خارج ميت غمر" style="margin-left: 30px;margin-right: 6px"> خارج ميت غمر <br><br>
-
-                    <label for="birth" class="name">Birth Date : *</label><br>
-                    <input type="date" id="birth" name="birth" class="input" placeholder="Enter your birth date" required><br>
-
-                    <label for="gender" class="name">Gender : *</label><br>
-                    <input type="radio" id="male" class="input1" name="gender" value="male" style="margin-right: 6px;"> Male
-                    <input type="radio" id="female" class="input1" name="gender" value="female" style="margin-left: 30px;margin-right: 6px"> Female <br><br>
-
-                </div>
-            </div>
-            <!-- education -->
-            <div class="panel panel-default">
-                <div class="panel-heading" style="font-size:large;background-color: #9B7EBD; color:white">Educational Information</div>
-                <div class="panel-body" style="background-color: #F1EFEF;">
-
-                    <label for="School" class="name">School :</label><br>
-                    <input type="text" class="input" id="School" name="School" placeholder="Enter your school"><br>
-
-                    <label for="Grade" class="name">Grade :</label><br>
-                    <!-- <input type="text" class="input" id="Grade" name="grade" placeholder="Enter your grade"><br> -->
-
-                    <input type="radio" class="input1" name="grade" value="KG2" style="margin-right: 6px;"> KG2
-                    <input type="radio" class="input1" name="grade" value="ابتدائي" style="margin-left: 30px;margin-right: 6px"> ابتدائي <br>
-
-                    <input type="radio" class="input1" name="grade" value="ثانوي" style="margin-right: 6px"> ثانوي
-                    <input type="radio" class="input1" name="grade" value="اعدادي" style="margin-left: 9px;margin-right: 6px"> اعدادي <br>
-
-                    <label for="training" class="name">Other Education or Training Courses :</label><br>
-                    <input type="text" id="training" class="input" name="training" placeholder="Enter any other education"><br>
-                </div>
-            </div>
-            <!-- work -->
-            <div class="panel panel-default">
-                <div class="panel-heading" style="font-size:large;background-color: #9B7EBD; color:white">Select your Course</div>
-                <div class="panel-body" style="background-color: #F1EFEF;">
-                    <div class="container-fluid mt-4">
-                        <div class="row">
-                    <!-- ScratchJr -->
-                        <div class="col-md-3 mb-4">
-                            <div class="card selectable-card" data-title="ScratchJr" data-price="500">
-                              <div class="card-body">
-                                <h5 class="card-title">📘 ScratchJr</h5>
-                                <p class="card-text">الفئة العمرية: 5 - 7 سنوات</p>
-                              </div>
-                            </div>
-                          </div>
-
-                          <!-- Scratch 3 -->
-                          <div class="col-md-3 mb-4">
-                            <div class="card selectable-card" data-title="Scratch 3" data-price="800">
-                              <div class="card-body">
-                                <h5 class="card-title">💡 Scratch 3</h5>
-                                <p class="card-text">الفئة العمرية: 7 - 10 سنوات</p>
-                              </div>
-                            </div>
-                          </div>
-
-                          <!-- Robotics -->
-                          <div class="col-md-3 mb-4">
-                            <div class="card selectable-card" data-title="Robotics" data-price="1000">
-                              <div class="card-body">
-                                <h5 class="card-title">🤖 Robotics</h5>
-                                <p class="card-text">الفئة العمرية: 11 - 18 سنة</p>
-                              </div>
-                            </div>
-                          </div>
-
-                          <!-- AI with Python -->
-                          <div class="col-md-3 mb-4">
-                            <div class="card selectable-card" data-title="AI with Python" data-price="1300">
-                              <div class="card-body">
-                                <h5 class="card-title">🧠 AI with Python</h5>
-                                <p class="card-text">الفئة العمرية: 11 - 18 سنة</p>
-                              </div>
-                            </div>
-                          </div>
-                          <input type="hidden" id="coursetype" type="text">
-                  </div>
-                </div>
-
-                </div>
-            </div>
-            
-            <!-- payment -->
-            <div id="paymentSection" style="display: none;">
-                <div class="panel-heading" style="font-size:large;background-color: #9B7EBD; color:white">
-                  PAYMENT DETAILS
-                </div>
-                <div class="panel-body" style="background-color: #F1EFEF;">
-                  <div class="upload-container">
-                    <label for="img">Upload Payment Image: *</label>
-                    <p style="font-size:15px;">
-                      You need to pay <span id="coursePrice">___</span> L.E to attend the event & upload the transfer receipt
-                    </p>
-                    <div>
-                      <input type="file" id="img" class="button" name="img" required>
-                    </div>
-                    <div class="image-buttons">
-                      <img src="images/instapay-egypt-logo.avif" alt="InstaPay" onclick="showPopup2('instaPayPopup')">
-                      <img src="images/vcash.jpg" alt="Vodafone Cash" onclick="showPopup3('vodafonePopup')">
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-            
-            <div class="accept none">
-                <label style="color: #424242;">
-                    <input type="checkbox" name="acceptTerms" id="acceptTerms" style="margin-right: 8px;" required>
-                    Accept all Terms & Conditions
-                </label>
-    
-                <button type="submit" class="button">
-                    <i class="fas fa-envelope" style="margin-right: 8px;"></i>
-                    Get Your Invitation
-                </button> 
-            </div>
-           
-            <div id="instaPayPopup" class="popup" style="display:none;">
-                            <div class="popup-content">
-                                <span class="close" onclick="closePopup2('instaPayPopup')">&times;</span>
-                                <div class="popup-text">
-                                    <img src="images/instapay.png" alt="InstaPay Header" class="popup-image">
-                                    <div class="popup-message">
-                                        <p style="color:black; align-items: center;">
-                                            <img src="images/flag.png" alt="علم مصر" style="width: 30px; height: 20px; margin-right: 8px;">+20 100 020 3843
-                                        </p>
-                                        <p>يجب دفع <span id="priceinsta"></span> ج رسوم التسجيل ورفع صوره واضحة من صوره التحويل حتي يتم تدقيق الطلب الخاص بكم خلال 24 ساعة وافادتكم بالقبول</p>
-                                        <p style="color:black; font-size:1.2em;background-color:#9B7EBD;color:white;direction:rtl">مـا يشملـه السعـر : </p>
-                                        <ul style="color:black;direction:rtl;text-align:right;">
-                                            <li>الدورات التدريبية الخاصة بالتسويق الالكتروني</li>
-                                            <li>ورش العمل الخاصة بالتسويق الميداني </li>
-                                            <li>الادوات المكتبية و التسويقية و الايديهات </li>
-                                        </ul>
-                                        <p style="color:black;font-size:1.2em;background-color:#9B7EBD;color:white;direction:rtl">مـا لا يشملـه السعـر :</p>
-                                        <ul>
-                                            <li style="color:black;direction:rtl;">شهادة التدريب و الخبرة في الدورات المقدمة ( تضاف قيمة ٥٠ ج اضافية للمبلغ )</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-            </div>
-
-            <div id="vodafonePopup" class="popup" style="display:none;">
-                <div class="popup-content">
-                    <span class="close" onclick="closePopup3('vodafonePopup')">&times;</span>
-                    <div class="popup-text">
-                        <img src="images/vodafone.png" alt="Vodafone Cash Header" class="popup-image">
-                        <div class="popup-message">
-                            <p style="color:black;align-items: center;"> <img src="images/flag.png" alt="علم مصر" style="width: 30px; height: 20px; margin-right: 8px;">
-                                +20 106 725 6688</p>
-                            <p>يجب دفع <span id="pricevodafone"></span> ج رسوم التسجيل ورفع صوره واضحة من صوره التحويل حتي يتم تدقيق الطلب الخاص بكم خلال 24 ساعة وافادتكم بالقبول</p>
-                            <p style="color:black; font-size:1.2em;background-color:#9B7EBD;color:white;direction:rtl">مـا يشملـه السعـر : </p>
-                            <ul style="color:black;direction:rtl;text-align:right;">
-                                <li>الدورات التدريبية الخاصة بالتسويق الالكتروني</li>
-                                <li>ورش العمل الخاصة بالتسويق الميداني </li>
-                                <li>الادوات المكتبية و التسويقية و الايديهات </li>
-                            </ul>
-                            <p style="color:black;font-size:1.2em;background-color:#9B7EBD;color:white;direction:rtl">مـا لا يشملـه السعـر :</p>
-                            <ul>
-                                <li style="color:black;direction:rtl;">شهادة التدريب و الخبرة في الدورات المقدمة ( تضاف قيمة ٥٠ ج اضافية للمبلغ )</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- terms -->
-            
-            
-        </form>
-    </div>
-    <!-- submitPopup -->
-    <div id="modal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closeModal()">×</span>
-            <div class="icon-container">
-                <img id="modal-icon" src="images/check.png" class="success-icon">
-            </div>
-            <div id="modal-message"></div>
-        </div>
-    </div>
-
-    <script src="js/main.js"></script>
-</body>
-
-</html>
